@@ -1,23 +1,31 @@
 print "Welcome!"
-name = raw_input ("What is your first name?")
-last_name = raw_input ("What is your last name")
-creature = raw_input ("And what sort of creature are you?")
-quest = raw_input ("What is your quest?")
-time = raw_input ("How long have you been on your quest?")
+
+name = raw_input ("What is your first name? ")
+last_name = raw_input ("What is your last name? ")
+creature = raw_input ("And what sort of creature are you? ")
+quest = raw_input ("What is your quest? ")
+time = raw_input ("How long have you been on your quest? ")
 print "Ah, greetings %s of the family %s! You are most welcome to this land O brave and nobel %s. Although you have been striving for %s, we wish you well on your quest to %s." % (name, last_name, creature, time, quest)
 direction1 = raw_input ("There is a fork in the road. Which way would you like to go? L/R")
+
 if direction1 == "L":
     print "There is a pub. You get horribly drunk for another %s and completely fail to %s. Your fellow %ss will mock you for the rest of your days" % (time, quest, creature)
-    else direction2 = raw_input ("You meet an old man who offers to show you the way. Do you follow him? Y/N")
+else:
+    direction2 = raw_input ("You meet an old man who offers to show you the way. Do you follow him? Y/N")
+
     if direction2 == "Y":
         print "The old man is blind. You follow him off a cliff and die. You will never %s." % (quest)
-        else direction3 = raw_input ("You continue on your way. As night begins to fall, you notice a dim glow in the distance. Do you 1) head towards the light or 2) decide to camp out under a nearby tree? 1/2")
+    else:
+        direction3 = raw_input ("You continue on your way. As night begins to fall, you notice a dim glow in the distance. Do you 1) head towards the light or 2) decide to camp out under a nearby tree? 1/2")
+
         if direction3 == 2:
             print "The tree is hit by lightning. You die. You will never %s." % (quest)
-            else direction4 = raw_input ("As you walk towards the light, you realise it is a group of creatures feasting around a fire. Do you 1) duck behind a rock before they can see you, 2) wave and greet them enthusiastically or 3) ATTACK!!! ? 1/2/3")
+        else:
+            direction4 = raw_input ("As you walk towards the light, you realise it is a group of creatures feasting around a fire. Do you 1) duck behind a rock before they can see you, 2) wave and greet them enthusiastically or 3) ATTACK!!! ? 1/2/3")
+
             if direction4 == 1:
-                print "You slip on a patch of moss, hit your head on the rock and die. You will never %s." % (quest) 
+                print "You slip on a patch of moss, hit your head on the rock and die. You will never %s." % (quest)
             elif direction4 == 3:
                 print "It is a group of wandering %ss and %s orphans back from the war. You do not realise until it is too late and you have slaughtered them all. You have dishonored the name of %s and abandon your quest to %s to pay penance for what you have done." % (creature, creature, last_name, quest)
-            elif direction4 == 2:
+            else:
                 print "It is a group of wandering %ss and %s orphans back from the war. They great you with toasts to you %s and your family %s. After you offer them some of your mead, they help you to %s and take you back to the land of %ss where mother %S is waiting for you with a tasty pie." % (creature, creature, name, last_name, quest, creature, last_name)
