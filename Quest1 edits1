@@ -1,0 +1,116 @@
+print "~~~~~~~~~~~~~~~~~~~ WELCOME ~~~~~~~~~~~~~~~~~~~"
+print "~~~~~~~~~~~ TO THE LAND OF QUESTS! ~~~~~~~~~~~~"
+print "Please choose wisely, your next steps could lead"
+print "you down the path to your doom..."
+print
+
+name = raw_input ("My first name is ")
+last_name = raw_input ("My last name is ")
+creature = raw_input ("I am a (creature) ")
+quest = raw_input ("My quest is to ")
+time = raw_input ("I have been on this quest for ")
+print
+
+name = name.strip().capitalize()
+last_name = last_name.strip().capitalize()
+creature = creature.strip().capitalize()
+time = time.strip().lower()
+quest = quest.strip().lower()
+print
+
+print "Ah, greetings %s of the family %s! You must have travelled far from %sland. Although you have been striving for %s, we wish you well on your quest to %s." % (name, last_name, creature, time, quest)
+print
+print "As you begin on your quest you notice a fork in the road."
+direction1 = raw_input ("Would you like to go left or right? ")
+direction1 = direction1.upper()
+
+if direction1 == "L" or direction1 == "LEFT":
+    print
+    print "There is a pub. You get horribly drunk for another %s and completely fail to %s. Your fellow %ss will mock you for the rest of your days." % (time, quest, creature)
+    print "The end."
+
+    start1 = raw_input ("Would you like to sober up? ")
+    start1 = start1.upper()
+    if start1 == "Y" or start1 == "YES":
+        print "Sobering up in process. Please restart quest."
+    elif start1 == "N" or start1 == "NO":
+        print "Enjoy your drink!"
+    else:
+        print "Go home. You are drunk."
+
+elif direction1 == "R" or direction1 == "RIGHT":
+    print
+    print "You meet an old man who offers to show you how to %s." % (quest)
+    direction2 = raw_input ("Do you follow him? ")
+    direction2 = direction2.upper()
+
+    if direction2 == "Y" or direction2 =="YES":
+        print
+        print "The old man is blind. You follow him off a cliff and die. You will never %s." % (quest)
+
+        start2 = raw_input ("Would you like to resurrect? ")
+        start2 = start2.upper()
+        if start2 == "Y" or start2 == "YES":
+            print "Resurrection up in process. Please restart quest."
+        elif start2 == "N" or start2 == "NO":
+            print "Enjoy the afterlife!"
+        else:
+            print "It seems you are a lost cause."
+
+    elif direction2 == "N" or direction2 == "NO":
+        print
+        print "You continue on your way. In the distance you hear the cry of an old blind man falling off a cliff."
+        print
+        print "As night begins to fall you notice a dim glow in the distance."
+        direction3 = raw_input ("Do you 1) head towards the light or 2) decide to camp out under a nearby tree? 1/2 ")
+
+        if direction3 == 2:
+            print
+            print "The tree is hit by lightning."
+            print "You die."
+            print "You will never %s." % (quest)
+
+            start3 = raw_input ("Would you like to resurrect? ")
+            start3 = start3.upper()
+            if start3 == "Y" or start3 == "YES":
+                print "Resurrection up in process. Please restart quest."
+            elif start3 == "N" or start3 == "NO":
+                print "Enjoy the afterlife!"
+            else:
+                print "It seems you really are a lost cause."
+
+        elif direction3 == 1:
+            print
+            print "As you walk towards the light, you realise it is a group of creatures feasting around a fire."
+            direction4 = raw_input ("Do you 1) duck behind a rock before they can see you, 2) wave and greet them enthusiastically or 3) ATTACK!!! ? 1/2/3 ")
+
+            if direction4 == 1:
+                print
+                print "You slip on a patch of moss and hit your head on the rock."
+                print "You die."
+                print "You will never %s." % (quest)
+            elif direction4 == 3:
+                print
+                print "It is a group of wandering %ss and %s orphans back from the war. You do not realise until it is too late and you have slaughtered them all. You have dishonored the name of %s and abandon your quest to %s to pay penance for what you have done." % (creature, creature, last_name, quest)
+            else:
+                print
+                print "It is a group of wandering %ss and %s orphans back from the war. They great you with toasts to you %s and your family %s. After you offer them some of your mead, they help you to %s and take you back to %sland where Mother %s is waiting for you with a tasty pie." % (creature, creature, name, last_name, quest, creature, last_name)
+
+                restart = raw_input ("Would you like to play again?")
+                restart = restart.upper()
+
+                if restart == "Y" or restart == "YES":
+                    print "Good luck brave %s" % (creature)
+                elif restart == "N" or restart == "NO":
+                    print "Fine. Be that way."
+                else:
+                    print "Seems like you have been enjoying yourself too much. Go home. You are drunk."
+
+        else:
+            print "I'm sorry, you don't seem to be speaking English. Please restart quest."
+
+    else:
+        print "I'm sorry, I only understand English. Please restart quest."
+
+else:
+    print "Are you speaking English? Please restart the quest."
