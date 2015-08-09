@@ -1,0 +1,397 @@
+print 
+print 
+print "         Welcome to Escape"
+print "    (Will you make it out alive?)"
+print
+
+print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+print
+print "You wake up in a hotel room. You need to get out and you need to get out now!"
+print "You are going to need to pack light. You only have space for a few items in your bag."
+
+a = "camera"
+b = "penknife"
+c = "torch"
+d = "corkscrew"
+e = "stapler"
+f = "sunglasses"
+g = "extra socks"
+h = "notepad and pen"
+i = "wooley hat"
+j = "cards"
+k = "dice"
+l = "money"
+m = "tissues"
+
+first_room = [a, b, c, d, e, f, g, h, i, j, k, l, m]
+first_room.sort()
+
+print "You can only take four items."
+print first_room
+
+item1 = raw_input ("Item 1: ")
+item1 = item1.strip().lower()
+
+if item1 not in first_room:
+    print "Sorry, I did not understand that. Please try again."
+    item1 = raw_input ("Item 1: ")
+    item1 = item1.strip().lower()
+else:
+    print "Great, %s. What else?" % (item1)
+
+item2 = raw_input ("Item 2: ")
+item2 = item2.strip().lower()
+
+if item2 not in first_room:
+    print "Sorry, I did not understand that. Please try again."
+    item2 = raw_input ("Item 2: ")
+    item2 = item2.strip().lower()
+else:
+    print "Excellent, %s. What else?" % (item2)
+
+item3 = raw_input ("Item 3: ")
+item3 = item3.strip().lower()
+
+if item3 not in first_room:
+    print "Sorry, I did not understand that. Please try again."
+    item3 = raw_input ("Item 3: ")
+    item3 = item3.strip().lower()
+else:
+    print "OK, %s. What else?" % (item3)
+
+item4 = raw_input ("Item 4: ")
+item4 = item4.strip().lower()
+
+if item4 not in first_room:
+    print "Sorry, I did not understand that. Please try again."
+    item4 = raw_input ("Item 4: ")
+    item4 = item4.strip().lower()
+else:
+    print "And finally, %s. Wonderful." % (item4)
+
+bag = [item1, item2, item3, item4]
+bag.sort()
+
+print "Your bag contains "
+print bag
+
+print
+print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+print
+print "The phone in your hotel room begins to ring."
+action1 = raw_input ("Do you answer it? ")
+action1 = action1.strip().upper()
+action1 = action1[0]
+
+if action1 == "Y":
+    print "You tentatively pick up the reciever."
+    print "'Hello? Hello?"
+    print " [pause]"
+    name1 = raw_input ("'Who am I speaking to?' ")
+    name1 = name1.strip().capitalize()
+    print "'What? What do you mean %s? Where's my wife? Where's my Sarah? " % (name1)
+    print "You hang up the phone, grab your bag and run out of the room towards the stairs."
+elif action1 == "N":
+    print "You grab your bag and run out of the room towards the stairs, the phone ringing behind you."
+else :
+    print "Please use a yes or no answer."
+    action1 = raw_input ("Do you answer it? ")
+    action1 = action1.strip().upper()
+    action1 = action1[0]
+
+    if action1 == "Y":
+        print "You tentatively pick up the reciever."
+        print "'Hello? Hello?"
+        print " [pause]"
+        name1 = raw_input ("'Who am I speaking to?' ")
+        name1 = name1.strip().capitalize()
+        print "'What? What do you mean %s? Where's my wife? Where's my Sarah? " % (name1)
+        print "You hang up the phone, grab your bag and run out of the room towards the stairs."
+    else :
+        print "You grab your bag and run out of the room towards the stairs, the phone ringing behind you."
+
+
+print
+print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+print
+print "As you run down the stairs you bump into a security guard coming the other way. He stops you."
+name2 = raw_input ("'Where are you off to in such a rush?' ")
+name2 = name2.strip()
+print "'Really?'"
+print "He looks at you suspiciously."
+print "'So you're just off to %s, are you?'" % (name2)
+print " [pause]"
+age1 = raw_input ("'How old are you?' ")
+int(age1)
+
+if age1 <= 18:
+    print "'Only %s and running around by yourself?! You are coming to the reception desk with me.'" % (age1)
+    print "You are marched down the stairs to the reception desk. The lady behind the desk addresses the security guard cheerily, until she sees you are with him."
+    print "'I found this young'un running up and down the stairs. Only %s and claiming they have to %s. Kids these days! Unbelievable.'" % (age1, name2)
+    print "The lady examines you thoughtfully."
+    name3 = raw_input ("'Don't mind Ernie, he can be like that. My name is Lisa. What's yours?' ")
+    name3 = name3.strip().capitalize()
+    print "'Hi %s. Why don't you sit with me until Ernie can find your parents?'" % (name3)
+    print "Ernie nods, his job done, and makes his way back to the staircase. Lisa looks as though she is about to try to make conversation with you when someone calls her from across the entrance hall."
+    print "'Now you wait here, %s. And mind you don't get into any trouble. I'll be back in a moment.'"
+    print "While her back is turned you sneak across the entrance hall floor, and out of a side door into an alleyway next to the hotel."
+elif age1 <= 35:
+    print "'You should know better than to be running up and down the stairs at your age. Watch where you are going next time.'"
+    print "You apologies and continue making your way down the stairs at a reasonable pace until out of site of the security guard. At which point you run down the stairs, across the entrance hall and out of a side door into an alleyway next to the hotel."
+else:
+    print "'I'm so sorry. I'll get out of your way and leave you to it.'"
+    print "You thank him and continue making your way down the stairs at a reasonable pace until out of site of the security guard. At which point you run down the stairs, across the entrance hall and out of a side door into an alleyway next to the hotel."
+
+
+print
+print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+print
+print "You are going to need to change your appearance to start your new life. Let's see what you have in your bag."
+body = []
+print bag
+
+if b in bag:
+    print "You could cut your hair with your penknife."
+    action1b = raw_input ("Would you like to try this? ")
+    action1b = action1b.strip().upper()
+    action1b = action1b[0]
+
+    if action1b == "Y":
+        print "OK. Let's give this a go."
+        print "Well, you certainly look... different."
+        bb = "short hair"
+        body.append(bb)
+    else:
+        print "If you're sure."
+
+    if f in bag:
+        print "It's not exactly tropical weather, but you could put your sunglasses on."
+        action1f = raw_input ("Would you like to put them on? ")
+        action1f = action1f.strip().upper()
+        action1f = action1f[0]
+
+        if action1f == "Y":
+            print "Alright."
+            print "Wow. Very Hollywood."
+            bag.remove(f)
+            body.append(f)
+        else:
+            print "OK. You're the boss."
+
+        if i in bag:
+            print "It's not very cold, but you could put your wooley hat on."
+            action1i = raw_input ("Would you like to put it on? ")
+            action1i = action1i.strip().upper()
+            action1i = action1i[0]
+
+            if action1i == "Y":
+                print "Okeydoke."
+                print "A little bit skiing enthusiast. But I think you're working it."
+                bag.remove(i)
+                body.append(i)
+            else:
+                print "Alright"
+
+        else:
+            print "That's everything that could be useful from your bag."
+
+    elif i in bag:
+        print "It's not very cold, but you could put your wooley hat on."
+        action1i = raw_input ("Would you like to put it on? ")
+        action1i = action1i.strip().upper()
+        action1i = action1i[0]
+
+        if action1i == "Y":
+            print "Okeydoke."
+            print "A little bit skiing enthusiast. But I think you're working it."
+            bag.remove(i)
+            body.append(i)
+        else:
+            print "Alright"
+    else:
+        print "That's everything in your bag that could be useful."
+
+elif f in bag:
+    print "It's not exactly tropical weather, but you could put your sunglasses on."
+    action1f = raw_input ("Would you like to put them on? ")
+    action1f = action1f.strip().upper()
+    action1f = action1f[0]
+
+    if action1f == "Y":
+        print "Alright."
+        print "Wow. Very Hollywood."
+        bag.remove(f)
+        body.append(f)
+    else:
+        print "OK. You're the boss."
+
+    if i in bag:
+        print "It's not very cold, but you could put your wooley hat on."
+        action1i = raw_input ("Would you like to put it on? ")
+        action1i = action1i.strip().upper()
+        action1i = action1i[0]
+
+        if action1i == "Y":
+            print "Okeydoke."
+            print "A little bit skiing enthusiast. But I think you're working it."
+            bag.remove(i)
+            body.append(i)
+        else:
+            print "Alright"
+    else:
+        print "That's everything in your bag that could be useful."
+
+elif i in bag:
+    print "It's not very cold, but you could put your wooley hat on."
+    action1i = raw_input ("Would you like to put it on? ")
+    action1i = action1i.strip().upper()
+    action1i = action1i[0]
+
+    if action1i == "Y":
+        print "Okeydoke."
+        print "A little bit skiing enthusiast. But I think you're working it."
+        bag.remove(i)
+        body.append(i)
+    else:
+        print "Alright"
+        print "That's everything in your bag that could be useful."
+else:
+    print "It doesn't look as though there is anything in there that will help you at the moment. Let's hope that noone you know spots you."
+
+
+if bb in body or f in body or i in body :
+    disguise = "Y"
+else:
+    disguise = "N"
+
+
+print
+print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+print
+if disguise == "Y":
+    if age1 <= 18:
+        print "You leave the alleyway and turning the corner almost bump into Ernie. Thankfully he is distracted by a ruckus coming from the hotel entrance hall and doesn't recognise you because of your disguise."
+    else:
+        print "You leave the alleyway and turning the corner almost bump into the security guard from earlier. Thankfully he is distracted by a ruckus coming from the hotel entrance hall and doesn't recognise you because of your disguise."
+else:
+    if age1 <= 18:
+        print "You leave the alleyway and turning the corner almost bump into Ernie."
+        print "'What are you doing here, %s? I thought you were waiting with Lisa. O, let me guess. You're off to %s?" % (name3, name2)
+    else:
+        print "You leave the alleyway and turning the corner almost bump into the security guard from earlier."
+        print "'What are you doing here? Still running everywhere I see!'"
+
+    print "There is a ruckus coming from the hotel entrance. You use the time that he is distracted to slip past him and down the street away from the hotel."
+
+print
+print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+print
+print "Once you are a few streets away, you slow your pace and look at where you are."
+print
+action2 = raw_input ("Do you stop into the supermarket to pick up supplies? ")
+action2 = action2.strip().upper()
+action2 = action2[0]
+
+if action2 == "Y":
+    if len(bag) >= 4:
+        print "You don't have space to carry any supplies. You are already carrying:"
+        print bag
+        action3 = raw_input ("Would you like to remove something from your bag to make space? ")
+        action3 = action3.strip().upper()
+        action3 = action3[0]
+
+        if action3 == "Y":
+            action4 = raw_input ("What would you like to throw away? ")
+            action4 = action4.strip().lower()
+            bag.remove(action4)
+
+            print ("%s removed from your bag.") % (action4)
+            if len(bag) >= 1:
+                action5 = raw_input ("Would you like to remove something else from your bag? ")
+                action5 = action5.strip().upper()
+                action5 = action5[0]
+
+                if action5 == "Y":
+                    action6 = raw_input ("What would you like to throw away? ")
+                    action6 = action6.strip().lower()
+                    bag.remove(action6)
+
+                    print ("%s removed from your bag.") % (action6)
+                    if len(bag) >= 1:
+                        action7 = raw_input ("Would you like to remove something else from your bag? ")
+                        action7 = action7.strip().upper()
+                        action7 = action7[0]
+
+                        if action7 == "Y":
+                            action8 = raw_input ("What would you like to throw away? ")
+                            action8 = action8.strip().lower()
+                            bag.remove(action8)
+
+                            print ("%s removed from your bag.") % (action8)
+                            if len(bag) >= 1:
+                                action9 = raw_input ("Would you like to remove something else from your bag? ")
+                                action9 = action9.strip().upper()
+                                action9 = action9[0]
+
+                            else:
+                                print "Your bag is now empty."
+                        else:
+                            print "Great."
+                    else:
+                        print "Your bag is now empty."
+                else:
+                    print "Great."
+            else:
+                print "Your bag is now empty."
+        else:
+            print "OK. Then lets keep moving."
+    elif len(bag) >= 1:
+        print "You have %s items in your bag. You are carrying:" % (len(bag))
+        print bag
+        action10 = raw_input ("Would you like to remove something from your bag to make more space? ")
+        action10 = action10.strip().upper()
+        action10 = action10[0]
+
+        if action10 == "Y":
+            action11 = raw_input ("What would you like to throw away? ")
+            action11 = action11.strip().lower()
+            bag.remove(action11)
+
+            print ("%s removed from your bag.") % (action11)
+            if len(bag) >= 1:
+                action12 = raw_input ("Would you like to remove something else from your bag? ")
+                action12 = action12.strip().upper()
+                action12 = action12[0]
+
+                if action12 == "Y":
+                    action13 = raw_input ("What would you like to throw away? ")
+                    action13 = action13.strip().lower()
+                    bag.remove(action13)
+
+                    print ("%s removed from your bag.") % (action13)
+                    if len(bag) >= 1:
+                        action14 = raw_input ("Would you like to remove something else from your bag? ")
+                        action14 = action14.strip().upper()
+                        action14 = action14[0]
+
+                        if action14 == "Y":
+                            action15 = raw_input ("What would you like to throw away? ")
+                            action15 = action15.strip().lower()
+                            bag.remove(action15)
+
+                            print ("%s removed from your bag.") % (action15)
+
+                        else:
+                            print "Your bag is now empty."
+                    else:
+                        print "Great."
+                else:
+                    print "Your bag is now empty."
+            else:
+                print "Great."
+        else:
+            print "Your bag is now empty."
+    else:
+        print "Your bag is empty."
+else:
+    print "Ok. Let's keep moving."
