@@ -1,0 +1,611 @@
+inventory = {
+    'pocket': 'empty',
+    'belt': 'empty',
+    'bag':['map', 'torch', 'compass', 'small knife', 'bread loaf', 'bottle of water', 'twine'],
+    'gold': 500
+}
+
+inventory['bag'].sort()
+
+print
+print " [A strange man blocks your path]"
+print "Strange Man: Who are you?"
+print
+
+name = raw_input ("My name is ")
+name = name.strip().capitalize()
+print
+
+land = raw_input ("I come from the land of ")
+land = land.strip().capitalize()
+print
+
+quest = raw_input ("I am on a quest to find the ")
+quest = quest.strip()
+print
+
+print "Strange Man: Very well, %s of %s. I would wish you well on your quest to find the %s, but you seem very unprepared. I am Arthur, once wizard to the king. But that is another story." % (name, land, quest)
+print
+help1 = raw_input ("Would you like me to help you before you leave? ")
+help1 = help1.strip().capitalize()
+help1 = help1[0]
+print
+
+if help1 == "Y":
+    print "Arthur: Follow me then, young %s. And I will teach you things you will not learn in %s. But first tell me why you want to find the %s." % (name, land, quest)
+    reason = raw_input ("It seems a strange quest for one such as yourself? ")
+    reason = reason.strip()
+    print
+
+    print "Arthur: O, I understand. A nobel quest indeed. Very well. Lets see what we are working with. What do you have with you?"
+    print
+    help2 = raw_input ("Will you show me what you are carrying? ")
+    help2 = help2.strip().capitalize()
+    help2 = help2[0]
+    print
+
+    if help2 == "Y":
+        for x in inventory['bag']:
+            print x
+        print "Gold: %s" % (inventory['gold'])
+        print
+        print "Arthur: A fine collection of tools, but not enough to get you where you need to go. Here, perhaps these will help."
+        print "[Arthur hands you a dagger and a spell book.]"
+        inventory['belt'] = 'dagger'
+        inventory['spell book'] = ['lift spell', 'push spell 1']
+        print
+        print "Arthur: That's better. But you still don't have any power. Here."
+        print "[Arthur gives you 10 small balls the size of marbles. These are power balls.]"
+        inventory['power balls'] = 10
+
+    else:
+        print "Arthur: Very well. I can see you do not trust me. We'll have to use some guess work."
+        help3 = raw_input ("Do you need a spell book? ")
+        help3 = help3.strip().capitalize()
+        help3 = help3[0]
+        print
+
+        if help3 == "Y":
+            print "Arthur: Here you are."
+            print "[Arthur gives you a spell book.]"
+            inventory['spell book'] = ['lift spell', 'push spell 1']
+        else:
+            print "Arthur: Then I am not sure how I can help you. Best of luck with your quest."            #A gives you a spell book with two spells
+else:
+    print "Arthur: Very well. I know when I am not wanted."
+
+print
+print "[Continuing on the path, you hear a strange noise coming from the bushes nearby.]"
+decision1 = raw_input ("Do you run? ")
+decision1 = decision1.strip().capitalize()
+decision1 = decision1[0]
+print
+
+if decision1 == "Y":
+    print
+    print "[Blinded by panic, you run, straying from the path in your desire to outrun whatever is making that noise. You forget your quest to find the %s until you are deep in the heart of the forest.] " % (quest)
+    print
+    print "[Silence surrounds you.]"
+    print
+    print "[You look through your bag for something that might help you.]"
+    for x in inventory['bag']:
+        print x
+    print
+    decision2 = raw_input ("Which item would you like to use? ")
+    decision2 = decision2.strip().lower()
+    print
+
+    if decision2 not in inventory['bag']:
+        print "Sorry, I did not understand that. Please try again."
+        decision3 = raw_input ("Which item would you like to use? ")
+        decision3 = decision3.strip().lower()
+        print
+
+        if decision3 == "map":
+            print "Good thinking, the map!"
+            help4 = raw_input ("Would you like to use the compass as well? ")
+            help4 = help4.strip().upper()
+            help4 = help4[0]
+            print
+
+            if help4 == "Y":
+                print "[You pull out the compass, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+            else:
+                print "[Without the compass, you wander forward through the dense forest, looking for something other than trees to navigate by.]"
+
+        elif decision3 == 'compass':
+            print "Good thinking, the compass!"
+            help5 = raw_input ("Would you like to use the map as well? ")
+            help5 = help5.strip().upper()
+            help5 = help5[0]
+            print
+
+            if help5 == "Y":
+                print "[You pull out the map, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+            else:
+                print "[Just using the compass you decide to head North. North is as good a direction as any.]"
+        else:
+            print "That won't help you find your way out of the forrest to continue your quest to find the %s. Perhaps you should think again." % (quest)
+            decision4 = raw_input ("Which item would you like to use? ")
+            decision4 = decision4.strip().lower()
+            print
+
+            if decision4 not in inventory['bag']:
+                print "Sorry, I did not understand that. Please try again."
+                decision5 = raw_input ("Which item would you like to use? ")
+                decision5 = decision5.strip().lower()
+                print
+
+                if decision5 == "map":
+                    print "Good thinking, the map!"
+                    help4 = raw_input ("Would you like to use the compass as well? ")
+                    help4 = help4.strip().upper()
+                    help4 = help4[0]
+                    print
+
+                    if help4 == "Y":
+                        print "[You pull out the compass, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+                    else:
+                        print "[Without the compass, you wander forward through the dense forest, looking for something other than trees to navigate by.]"
+
+                elif decision4 == 'compass':
+                    print "Good thinking, the compass!"
+                    help5 = raw_input ("Would you like to use the map as well? ")
+                    help5 = help5.strip().upper()
+                    help5 = help5[0]
+                    print
+
+                    if help5 == "Y":
+                        print "[You pull out the map, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+                    else:
+                        print "[Just using the compass you decide to head North. North is as good a direction as any.]"
+
+            elif decision4 == "map":
+                print "Good thinking, the map!"
+                help4 = raw_input ("Would you like to use the compass as well? ")
+                help4 = help4.strip().upper()
+                help4 = help4[0]
+                print
+
+                if help4 == "Y":
+                    print "[You pull out the compass, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+                else:
+                    print "[Without the compass, you wander forward through the dense forest, looking for something other than trees to navigate by.]"
+
+            elif decision4 == 'compass':
+                print "Good thinking, the compass!"
+                help5 = raw_input ("Would you like to use the map as well? ")
+                help5 = help5.strip().upper()
+                help5 = help5[0]
+                print
+
+                if help5 == "Y":
+                    print "[You pull out the map, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+                else:
+                    print "[Just using the compass you decide to head North. North is as good a direction as any.]"
+            else:
+                print "[You try to find your way using the %s. It does not help you. You wander aimlessly around the forest.]" % (decision4)
+
+    elif decision2 == "map":
+        print "Good thinking, the map!"
+        help4 = raw_input ("Would you like to use the compass as well? ")
+        help4 = help4.strip().upper()
+        help4 = help4[0]
+        print
+
+        if help4 == "Y":
+            print "[You pull out the compass, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+        else:
+            print "[Without the compass, you wander forward through the dense forest, looking for something other than trees to navigate by.]"
+
+    elif decision2 == 'compass':
+        print "Good thinking, the compass!"
+        help5 = raw_input ("Would you like to use the map as well? ")
+        help5 = help5.strip().upper()
+        help5 = help5[0]
+        print
+
+        if help5 == "Y":
+            print "[You pull out the map, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+        else:
+            print "[Just using the compass you decide to head North. North is as good a direction as any.]"
+    else:
+        print "That won't help you find your way out of the forrest to continue your quest to find the %s. Perhaps you should think again." % (quest)
+        decision4 = raw_input ("Which item would you like to use? ")
+        decision4 = decision4.strip().lower()
+        print
+
+        if decision4 not in inventory['bag']:
+            print "Sorry, I did not understand that. Please try again."
+            decision5 = raw_input ("Which item would you like to use? ")
+            decision5 = decision5.strip().lower()
+            print
+
+            if decision5 == "map":
+                print "Good thinking, the map!"
+                help4 = raw_input ("Would you like to use the compass as well? ")
+                help4 = help4.strip().upper()
+                help4 = help4[0]
+                print
+
+                if help4 == "Y":
+                    print "[You pull out the compass, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+                else:
+                    print "[Without the compass, you wander forward through the dense forest, looking for something other than trees to navigate by.]"
+
+            elif decision4 == 'compass':
+                print "Good thinking, the compass!"
+                help5 = raw_input ("Would you like to use the map as well? ")
+                help5 = help5.strip().upper()
+                help5 = help5[0]
+                print
+
+                if help5 == "Y":
+                    print "[You pull out the map, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+                else:
+                    print "[Just using the compass you decide to head North. North is as good a direction as any.]"
+
+        elif decision4 == "map":
+            print "Good thinking, the map!"
+            help4 = raw_input ("Would you like to use the compass as well? ")
+            help4 = help4.strip().upper()
+            help4 = help4[0]
+            print
+
+            if help4 == "Y":
+                print "[You pull out the compass, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+            else:
+                print "[Without the compass, you wander forward through the dense forest, looking for something other than trees to navigate by.]"
+
+        elif decision4 == 'compass':
+            print "Good thinking, the compass!"
+            help5 = raw_input ("Would you like to use the map as well? ")
+            help5 = help5.strip().upper()
+            help5 = help5[0]
+            print
+
+            if help5 == "Y":
+                print "[You pull out the map, and using your excellent map reading skills you begin to navigate your way back to the path.]"
+            else:
+                print "[Just using the compass you decide to head North. North is as good a direction as any.]"
+        else:
+            print "[You try to find your way using the %s. It does not help you. You wander aimlessly around the forest.]" % (decision4)
+
+else:
+    print "[A large rabbit jumps out of the bushes and starts hopping towards you. As you lean over to pet it, it growls and prepares to attack!]"
+    if 'dagger' in inventory['belt']:
+        fight1 = raw_input ("Would you like to use your dagger to defend yourself? ")
+        fight1 = fight1.strip().upper()
+        fight1 = fight1[0]
+        print
+
+        if fight1 == "Y":
+            print "[You thrust the dagger towards the rabbit, striking and killing it instantly.]"
+            fight2 = raw_input ("Would you like to skin the rabbit?")
+            fight2 = fight2.strip().upper()
+            fight2 = fight2[0]
+            print
+
+            if fight2 == "Y":
+                print "[You skin the rabbit and put the skin in your backpack. Look at you, becoming quite the hunter!]"
+                inventory['bag'].append('rabbit skin')
+
+            else:
+                print "[You drop the rabbit and continue on your way.]"
+
+        else:
+            if 'spell book' in inventory:
+                print "You have a spell book containing the following spells:"
+                for x in inventory['spell book']:
+                    print x
+                fight2 = raw_input ("Which spell would you like to use? ")
+                fight2 = fight2.strip().lower()
+                fight2 = fight2[0:4]
+                print
+
+                if fight2 == "push":
+                    print "[You use the push spell.]"
+                    print "[A hand rises out of the spell book and gently pushes the rabbit back in to the bushes. Confused, the rabbit hops away.]"
+                elif fight2 == "lift":
+                    print "[You use the lift spell.]"
+                    print "[A hand rises out of the spell book, picks up the rabbit by the scruff of the neck and drops it back in the bushes. Confused, the rabbit hops away.]"
+                else:
+                    print "[The spell does not work. The rabbit attacks...]"
+                    print "This is what you have in your bag:"
+                    print
+                    for x in inventory['bag']:
+                        print x
+                    print
+                    fight3 = raw_input ("Which of these items would you like to throw at the rabbit? ")
+                    fight3 = fight3.strip().lower()
+                    print
+
+                    if fight3 in inventory['bag']:
+                        inventory['bag'].remove(fight3)
+
+                        if fight3 == 'small knife':
+                            print "[You throw the small knife at the rabbit, piercing its carotid artery. It falls to the floor and slowly bleeds to death in front of you.]"
+
+                        else:
+                            print "[You throw your %s at the rabbit, knocking it to the floor. It hops away, terrified.]" % (fight3)
+
+                    else:
+                        print "[In the confusion caused by being attacked by a rabbit, you throw your entire bag at it.]"
+
+                        if name[0] == "A" or name[0] == "E" or name[0] == "I" or name[0] == "O" or name[0] == "U":
+                            print "[You miss. The bag lands next to rabbit, who hops over to it and steals the loaf of bread it was after in the first place. It then hops back into the bushes.]"
+                            inventory['bag'].remove('bread loaf')
+
+                        else:
+                            print "[You hit the rabbit on the head with the bag, killing it and splitting your bag in two. The contents spills out across the path:]"
+                            for x in inventory['bag']:
+                                print x
+                            print "You have space in your pocket for two items, please choose which ones you would like to pick up."
+                            item1 = raw_input ("Item 1: ")
+                            item1 = item1.strip().lower()
+                            print
+
+                            if item1 not in inventory['bag']:
+                                print "That is not an item you can pick up. Please try again."
+                                item1 = raw_input ("Item 1: ")
+                                item1 = item1.strip().lower()
+
+                                print
+                                print "Ok, %s. Now one more: " % (item1)
+                                item2 = raw_input ("Item 2: ")
+                                item2 = item2.strip().lower()
+                                inventory['pocket'].remove('empty')
+                                inventory['pocket'] = [item1, item2]
+                            else:
+                                print
+                                print "Ok, %s. Now one more: " % (item1)
+                                item2 = raw_input ("Item 2: ")
+                                item2 = item2.strip().lower()
+                                inventory['pocket'].remove('empty')
+                                inventory['pocket'] = [item1, item2]
+
+                            inventory.remove['bag']
+            else:
+                print "This is what you have in your bag:"
+                for x in inventory['bag']:
+                    print x
+                fight3 = raw_input ("Which of these items would you like to throw at the rabbit? ")
+                fight3 = fight3.strip().lower()
+                print
+
+                if fight3 in inventory['bag']:
+                    inventory['bag'].remove(fight3)
+
+                    if fight3 == 'small knife':
+                        print "[You throw the small knife at the rabbit, piercing its carotid artery. It falls to the floor and slowly bleeds to death in front of you.]"
+
+                    else:
+                        print "[You throw your %s at the rabbit, knocking it to the floor. It hops away, terrified.]" % (fight3)
+
+                else:
+                    print "[In the confusion caused by being attacked by a rabbit, you throw your entire bag at it.]"
+
+                    if name[0] == "A" or name[0] == "E" or name[0] == "I" or name[0] == "O" or name[0] == "U":
+                        print "[You miss. The bag lands next to rabbit, who hops over to it and steals the loaf of bread it was after in the first place. It then hops back into the bushes.]"
+                        inventory['bag'].remove('bread loaf')
+
+                    else:
+                        print "[You hit the rabbit on the head with the bag, killing it and splitting your bag in two. The contents spills out across the path:]"
+                        for x in inventory['bag']:
+                            print x
+                        print "You have space in your pocket for two items, please choose which ones you would like to pick up."
+                        item1 = raw_input ("Item 1: ")
+                        item1 = item1.strip().lower()
+                        print
+
+                        if item1 not in inventory['bag']:
+                            print "That is not an item you can pick up. Please try again."
+                            item1 = raw_input ("Item 1: ")
+                            item1 = item1.strip().lower()
+
+                            print
+                            print "Ok, %s. Now one more: " % (item1)
+                            item2 = raw_input ("Item 2: ")
+                            item2 = item2.strip().lower()
+                            inventory['pocket'].remove('empty')
+                            inventory['pocket'] = [item1, item2]
+                        else:
+                            print
+                            print "Ok, %s. Now one more: " % (item1)
+                            item2 = raw_input ("Item 2: ")
+                            item2 = item2.strip().lower()
+                            inventory['pocket'].remove('empty')
+                            inventory['pocket'] = [item1, item2]
+
+                        inventory.remove['bag']
+
+    elif 'spell book' in inventory:
+        print
+        print "You have a spell book containing the following spells:"
+        for x in inventory['spell book']:
+            print x
+        fight2 = raw_input ("Which spell would you like to use? ")
+        fight2 = fight2.strip().lower()
+        fight2 = fight2[0:4]
+        print
+
+        if fight2 == "push":
+            print "[You use the push spell.]"
+            print "[A hand rises out of the spell book and gently pushes the rabbit back in to the bushes. Confused, the rabbit hops away.]"
+        elif fight2 == "lift":
+            print "[You use the lift spell.]"
+            print "[A hand rises out of the spell book, picks up the rabbit by the scruff of the neck and drops it back in the bushes. Confused, the rabbit hops away.]"
+        else:
+            print "[The spell does not work. The rabbit attacks...]"
+            print "This is what you have in your bag:"
+            for x in inventory['bag']:
+                print x
+            fight3 = raw_input ("Which of these items would you like to throw at the rabbit? ")
+            fight3 = fight3.strip().lower()
+            print
+
+            if fight3 in inventory['bag']:
+                inventory['bag'].remove(fight3)
+
+                if fight3 == 'small knife':
+                    print "[You throw the small knife at the rabbit, piercing its carotid artery. It falls to the floor and slowly bleeds to death in front of you.]"
+
+                else:
+                    print "[You throw your %s at the rabbit, knocking it to the floor. It hops away, terrified.]" % (fight3)
+
+            else:
+                print "[In the confusion caused by being attacked by a rabbit, you throw your entire bag at it.]"
+
+                if name[0] == "A" or name[0] == "E" or name[0] == "I" or name[0] == "O" or name[0] == "U":
+                    print "[You miss. The bag lands next to rabbit, who hops over to it and steals the loaf of bread it was after in the first place. It then hops back into the bushes.]"
+                    inventory['bag'].remove('bread loaf')
+
+                else:
+                    print "[You hit the rabbit on the head with the bag, killing it and splitting your bag in two. The contents spills out across the path:]"
+                    for x in inventory['bag']:
+                        print x
+                    print "You have space in your pocket for two items, please choose which ones you would like to pick up."
+                    item1 = raw_input ("Item 1: ")
+                    item1 = item1.strip().lower()
+                    print
+
+                    if item1 not in inventory['bag']:
+                        print "That is not an item you can pick up. Please try again."
+                        item1 = raw_input ("Item 1: ")
+                        item1 = item1.strip().lower()
+
+                        print
+                        print "Ok, %s. Now one more: " % (item1)
+                        item2 = raw_input ("Item 2: ")
+                        item2 = item2.strip().lower()
+                        inventory['pocket'].remove('empty')
+                        inventory['pocket'] = [item1, item2]
+                    else:
+                        print
+                        print "Ok, %s. Now one more: " % (item1)
+                        item2 = raw_input ("Item 2: ")
+                        item2 = item2.strip().lower()
+                        inventory['pocket'].remove('empty')
+                        inventory['pocket'] = [item1, item2]
+
+    else:
+        print
+        print "This is what you have in your bag:"
+        for x in inventory['bag']:
+            print x
+        fight3 = raw_input ("Which of these items would you like to throw at the rabbit? ")
+        fight3 = fight3.strip().lower()
+        print
+
+        if fight3 in inventory['bag']:
+            inventory['bag'].remove(fight3)
+
+            if fight3 == 'small knife':
+                print
+                print "[You throw the small knife at the rabbit, piercing its carotid artery. It falls to the floor and slowly bleeds to death in front of you.]"
+
+            else:
+                print
+                print "[You throw your %s at the rabbit, knocking it to the floor. It hops away, terrified.]" % (fight3)
+
+        else:
+            print
+            print "[In the confusion caused by being attacked by a rabbit, you throw your entire bag at it.]"
+
+            if name[0] == "A" or name[0] == "E" or name[0] == "I" or name[0] == "O" or name[0] == "U":
+                print
+                print "[You miss. The bag lands next to rabbit, who hops over to it and steals the loaf of bread it was after in the first place. It then hops back into the bushes.]"
+                inventory['bag'].remove('bread loaf')
+
+            else:
+                print "[You hit the rabbit on the head with the bag, killing it and splitting your bag in two. The contents spills out across the path:]"
+                print
+                for x in inventory['bag']:
+                    print x
+                print
+                print "You have space in your pocket for two items, please choose which ones you would like to pick up."
+                item1 = raw_input ("Item 1: ")
+                item1 = item1.strip().lower()
+                print
+
+                if item1 not in inventory['bag']:
+                    print
+                    print "That is not an item you can pick up. Please try again."
+                    item1 = raw_input ("Item 1: ")
+                    item1 = item1.strip().lower()
+
+                    print
+                    print "Ok, %s. Now one more: " % (item1)
+                    item2 = raw_input ("Item 2: ")
+                    item2 = item2.strip().lower()
+                    inventory['pocket'].remove('empty')
+                    inventory['pocket'] = [item1, item2]
+                else:
+                    print
+                    print "Ok, %s. Now one more: " % (item1)
+                    item2 = raw_input ("Item 2: ")
+                    item2 = item2.strip().lower()
+                    inventory['pocket'].remove('empty')
+                    inventory['pocket'] = [item1, item2]
+
+                inventory.remove['bag']
+
+print
+print "[You are still walking as night begins to fall. You spot a dim light ahead of you.]"
+print
+
+decision6 = raw_input ("Would you like to continue walking towards it? ")
+decision6 = decision6.strip().upper()
+decision6 = decision6[0]
+print
+
+if decision6 == "Y":
+    print "[As you move towards the light you realise it is the entrance to a settlement of some kind, surrounded by a high wall, higher than you could ever hope to scale.]"
+    print "You have several options:"
+    print "1. Continue walking towards the entrance to the settlement"
+    print "2. Settle in to the bushes to wait until morning"
+    print "3. Approach the wall without being seen and work your way around the outside to find a less obvious route in to the settlement"
+    decision7 = raw_input ("Which of the above numbered options would you like to follow? ")
+    decision7 = decision7.strip()
+    decision7 = int(decision7[0])
+    print
+
+    if decision7 == 1:
+        print "[You walk up to the entrance, slowing down as you approach. There is someone stood next to the gate.]"
+        print "HALT! Who goes there? We've heard tales of %s from %s." % (name, land)
+        help6 = raw_input ("Is that you? ")
+        help6 = help6.strip().upper()
+        help6 = help6[0]
+        print
+
+        if help6 == "Y":
+            print "Ah! Arthur told us about you. You're looking for the %s." % (quest)
+            print "I think we might be able to help. Please head on inside."
+        else:
+            name2 = raw_input ("O. What is your name? ")
+            name2 = name2.strip().capitalize()
+            print
+
+            print "Then welcome, %s." % (name2)
+            help7 = raw_input ("Would you like to come into our village? ")
+            help7 = help7.strip().upper()
+            help7 = help7[0]
+            print
+
+            if help7 == "Y":
+                print "Great. Come on inside."
+            else:
+                print "O. Alright. Goodbye %s." % (name2)
+                # Follows on from waiting outside the 
+        #walking towards the entrance
+
+    elif decision7 == 2:
+        print
+        #settle in to the bushes
+
+    else:
+        print
+        #walk around the wall to find another entrance into the settlement
+
+else:
+    print "[]" #Camp for the night
