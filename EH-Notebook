@@ -348,3 +348,8 @@ def get_class_average(students):
         n = get_average(student)
         results.append(n)
     return average(results)
+    
+    
+
+>>> ("foo %s"
+... " bar %s") % (1, 2)
